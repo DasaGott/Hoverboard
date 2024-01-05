@@ -3,28 +3,28 @@
 }
 
 body {
-  margin: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #343434;
+  overflow: hidden;
 }
 
 .container {
+  margin: 10px;
   display: flex;
   flex-wrap: wrap;
-  max-width: 350px;
+  max-width: 450px;
   justify-content: flex-start;
-  padding: 2px;
 }
 .square {
   width: 16px;
   height: 16px;
   background-color: #28282b;
-  box-shadow: 0 0 2px 2px #28282b40;
+  box-shadow: 0 0 5px 2px #28282b40;
   margin: 2px;
-  transition: 2s ease;
+  transition: 5s ease;
 }
 
 .square:hover {
