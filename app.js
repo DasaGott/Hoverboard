@@ -9,22 +9,23 @@ const colorsOne = [
   "#00B3E6",
 ];
 
-// const colorsTwo = [
-//   "#E6B333",
-//   "#3366E6",
-//   "#999966",
-//   "#99FF99",
-//   "#B34D4D",
-// ];
+const colorsTwo = [
+  "#E6B333",
+  "#3366E6",
+  "#999966",
+  "#99FF99",
+  "#B34D4D",
+];
 
-// const colorsThree = [
-//   "#80B300",
-//   "#809900",
-//   "#E6B3B3",
-//   "#6680B3",
-//   "#66991A",
-// ];
+const colorsThree = [
+  "#80B300",
+  "#809900",
+  "#E6B3B3",
+  "#6680B3",
+  "#66991A",
+];
 
+let selectedColors = colorsOne;
 const SQUARES = 506;
 
 for (let i = 0; i < SQUARES; i++) {
@@ -47,12 +48,44 @@ function changeColor(element) {
 }
 
 function getRandomColor() {
-  return colorsOne[
-    Math.floor(Math.random() * colorsOne.length)
+  return selectedColors[
+    Math.floor(
+      Math.random() * selectedColors.length
+    )
   ];
 }
+
+document
+  .getElementById("buttonOne")
+  .addEventListener("click", () => {
+    selectedColors = colorsOne;
+  });
+
+document
+  .getElementById("buttonTwo")
+  .addEventListener("click", () => {
+    selectedColors = colorsTwo;
+  });
+
+document
+  .getElementById("buttonThree")
+  .addEventListener("click", () => {
+    selectedColors = colorsThree;
+  });
 
 function removeColor(element) {
   element.style.backgroundColor = `#28282b`;
   element.style.boxShadow = `0 0 5px 2px #28282b40`;
 }
+
+// const deleteBtn = document.getElementById(
+//   "deletebutton"
+// );
+// const terminationBtn = document.getElementById(
+//   "timeterminationbutton"
+// );
+
+// deleteBtn.addEventListener("click", (element) => {
+//   element.style.backgroundColor = `#28282b`;
+//   element.style.boxShadow = `0 0 5px 2px #28282b40`;
+// });
