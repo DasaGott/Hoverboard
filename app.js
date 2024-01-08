@@ -4,7 +4,7 @@ const container =
 const colorsOne = [
   "#FF6633",
   "#FFB399",
-  "#FF33FF",
+  "#2c786c",
   "#FFFF99",
   "#00B3E6",
 ];
@@ -18,11 +18,11 @@ const colorsTwo = [
 ];
 
 const colorsThree = [
-  "#80B300",
-  "#809900",
-  "#E6B3B3",
-  "#6680B3",
-  "#66991A",
+  "#80b300",
+  "#ff3380",
+  "#e6b3b3",
+  "#6680b3",
+  "#9900b3",
 ];
 
 let selectedColors = colorsOne;
@@ -78,14 +78,23 @@ function removeColor(element) {
   element.style.boxShadow = `0 0 5px 2px #28282b40`;
 }
 
-// const deleteBtn = document.getElementById(
-//   "deletebutton"
-// );
-// const terminationBtn = document.getElementById(
-//   "timeterminationbutton"
-// );
+const deleteBtn = document.getElementById(
+  "deletebutton"
+);
 
-// deleteBtn.addEventListener("click", (element) => {
-//   element.style.backgroundColor = `#28282b`;
-//   element.style.boxShadow = `0 0 5px 2px #28282b40`;
-// });
+deleteBtn.addEventListener("click", () => {
+  const squares =
+    document.querySelectorAll(".square");
+
+  squares.forEach((square) => {
+    removeColor(square);
+    square.style.transition = "none";
+  });
+
+  selectedColors = colorsOne;
+  setTimeout(() => {
+    squares.forEach((square) => {
+      square.style.transition = "";
+    });
+  }, 200);
+});
